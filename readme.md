@@ -1,6 +1,8 @@
 # TorusCycle
 
-An incomplete Tron WebGL clone.
+An incomplete Tron WebGL clone. [Preview it.][preview]
+
+[![TorusCycle screenshot](screenshot.jpg)][preview]
 
 ## Build
 
@@ -18,3 +20,4 @@ Go to [localhost:1234](http://localhost:1234).
 
 MIT
 
+[preview]: http://nechifor.net/static/torus-cycle/index.html
