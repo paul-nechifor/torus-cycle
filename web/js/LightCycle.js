@@ -13,7 +13,7 @@ LightCycle.prototype.setUpModels = function (xCell, yCell) {
     var model;
     var x = xCell * Config.CELL_SIZE + Config.CELL_SIZE/2;
     var z = yCell * Config.CELL_SIZE + Config.CELL_SIZE/2;
-    
+
     for (var i = 0; i < 9; i++) {
         model = LightCycle.loadNewModel(this.computer);
         model.position.x = x;
@@ -37,14 +37,14 @@ LightCycle.prototype.moveToClosestCell = function () {
     this.yCell = Math.floor(pos.z / cellSize);
     var x = (this.xCell + 0.5) * cellSize;
     var z = (this.yCell + 0.5) * cellSize;
-    
+
     for (var i = 0; i < 9; i++) {
         pos = this.models[i].position;
         pos.x = x;
         pos.z = z;
     }
 };
-    
+
 /**
  * Left or right (-1 or 1).
  */
@@ -52,11 +52,11 @@ LightCycle.prototype.turn = function (way) {
     this.direction = (this.direction + way + 4) % 4;
     this.leftToTurn -= way * Math.PI/2;
 };
-    
+
 LightCycle.prototype.tic = function (delta) {
     var increment, pos, roty, x, z, i;
     var size = this.computer.size;
-    
+
     increment = Config.MOVE_SPEED * delta;
     pos = this.models[0].position;
     x = pos.x;
@@ -72,14 +72,14 @@ LightCycle.prototype.tic = function (delta) {
     } else if (this.direction === Const.UP) {
         z = (z - increment + size) % size;
     }
-    
+
     // Setting the position for all the models.
     for (i = 0; i < 9; i++) {
         pos = this.models[i].position;
         pos.x = x;
         pos.z = z;
     }
-    
+
     // Checking if this is a new cell.
     var cellSize = Config.CELL_SIZE;
     var xCell = Math.floor(x / cellSize);
@@ -91,14 +91,14 @@ LightCycle.prototype.tic = function (delta) {
     } else {
         this.inNewCell = false;
     }
-    
+
     // Checking if the rotation needs to change.
     if (this.leftToTurn !== 0.0) {
         increment = delta * Const.TURN_SPEED;
         if (this.leftToTurn < 0) {
             increment = -increment;
         }
-        
+
         roty = this.models[0].rotation.y;
         if (changesSign(this.leftToTurn, increment)) {
             roty += this.leftToTurn;
@@ -107,7 +107,7 @@ LightCycle.prototype.tic = function (delta) {
             roty += increment;
             this.leftToTurn -= increment;
         }
-        
+
         // Setting the new rotation for all the models.
         for (i = 0; i < 9; i++) {
             this.models[i].rotation.y = roty;
@@ -117,7 +117,7 @@ LightCycle.prototype.tic = function (delta) {
 
 LightCycle.loadNewModel = function (comp) {
     var object = new THREE.Object3D();
-    
+
     var geo = new THREE.CubeGeometry(2.5, 1, 0.5);
     var mat = new THREE.MeshPhongMaterial({
         map: comp.resources.getTexture(comp.opt.lightCycleTextures[0])
@@ -140,6 +140,6 @@ LightCycle.loadNewModel = function (comp) {
     mesh.position.y += 0.35;
     mesh.castShadow = true;
     object.add(mesh);
-    
+
     return object;
 };

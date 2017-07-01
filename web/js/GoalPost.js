@@ -24,7 +24,7 @@ GoalPost.prototype.setGoal = function (goal) {
     if (this.value === goal) {
         return;
     }
-    
+
     this.valueBecome = goal;
     this.changing = true;
 };

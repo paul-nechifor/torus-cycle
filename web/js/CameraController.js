@@ -1,9 +1,9 @@
 function CameraController(camera) {
     this.camera = camera;
-    
+
     this.offsetIndex = 0;
     this.rotIndex = 0;
-    
+
     this.distance = new GoalPost(Const.DISTANCES[this.offsetIndex]);
     this.angle = new GoalPost(Const.ANGLES[this.offsetIndex] * Math.PI/180);
     this.rotation = new GoalPost(Const.ROTATIONS[this.rotIndex] * Math.PI/180);
@@ -14,20 +14,20 @@ function CameraController(camera) {
     this.subjectAngle = -Math.PI/2;
     this.subjectLookAt = new THREE.Vector3();
 }
-    
+
 CameraController.prototype.tic = function (delta) {
     if (this.distance.changing) {
         this.distance.useIncrement(delta * Const.DISTANCE_SPEED);
     }
-    
+
     if (this.angle.changing) {
         this.angle.useIncrement(delta * Const.ANGLE_SPEED);
     }
-    
+
     if (this.rotation.changing) {
         this.rotation.useIncrement(delta * Const.ROTATION_SPEED);
     }
-    
+
     this.subjectLookAt.copy(this.subject.position);
     var offsetRotation = this.subjectAngle - this.subject.rotation.y;
     this.subjectLookAt.x += this.subjectDist * Math.cos(offsetRotation);

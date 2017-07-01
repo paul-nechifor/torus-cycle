@@ -23,15 +23,15 @@ Computer.prototype.setUp = function () {
         }
     }
 };
-    
+
 Computer.prototype.addPlayer = function (player) {
     this.players[player.id] = player;
 };
-    
+
 Computer.prototype.removePlayer = function (player) {
     delete this.players[player.id];
 };
-    
+
 Computer.prototype.tic = function (delta) {
     for (var id in this.players) {
         this.players[id].tic(delta);

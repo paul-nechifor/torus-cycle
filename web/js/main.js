@@ -26,10 +26,10 @@
         if (!supported) {
             return "Your browser doesn't support WebGL.";
         }
-        
+
         return null;
     }
-    
+
     function main() {
         var initialMessage = document.getElementsByClassName(
                 "initialMessage")[0];
@@ -40,12 +40,12 @@
             initialMessage.textContent = error;
             return;
         }
-        
+
         var container = document.createElement("div");
         container.setAttribute("class", "canvasContainer");
         document.body.appendChild(container);
         TorusCycle.start(container);
     }
-    
+
     main();
 })(TorusCycle);
