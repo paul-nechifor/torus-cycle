@@ -4,7 +4,7 @@ import sys, os, shutil, subprocess, tempfile
 
 YUI_PATH = "yuicompressor-2.4.7.jar"
 SRC_DIR = "../web/"
-DST_DIR = "../build"
+DST_DIR = "../dist"
 UNITS = [
     {
         "type": "css",

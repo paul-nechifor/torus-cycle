@@ -11,13 +11,13 @@ An incomplete Tron WebGL clone. [Preview it.][preview]
 
 ## Run it
 
-    cd ../web
+    cd ../dist
     python2 -m SimpleHTTPServer 1234
 
 Go to [localhost:1234](http://localhost:1234).
 
 ## License
 
-MIT
+ISC
 
 [preview]: http://nechifor.net/static/torus-cycle/index.html
