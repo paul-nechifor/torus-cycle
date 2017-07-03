@@ -1,4 +1,4 @@
-{
+const config = {
     "MOVE_SPEED": 15,
     "CELL_SIZE": 0.1,
     "Computers": {
@@ -14,4 +14,6 @@
             ]
         }
     }
-}
+};
+
+export {config as default};

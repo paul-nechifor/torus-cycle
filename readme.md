@@ -4,20 +4,14 @@ An incomplete Tron WebGL clone. [Preview it.][preview]
 
 [![TorusCycle screenshot](screenshot.jpg)][preview]
 
-## Build
+## Usage
 
-    cd tools
-    python2 build.py
+Start the server and watch for changes:
 
-## Run it
-
-    cd ../dist
-    python2 -m SimpleHTTPServer 1234
-
-Go to [localhost:1234](http://localhost:1234).
+    npm start
 
 ## License
 
 ISC
 
-[preview]: http://nechifor.net/static/torus-cycle/index.html
+[preview]: http://nechifor.net/torus-cycle

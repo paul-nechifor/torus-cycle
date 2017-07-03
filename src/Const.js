@@ -1,5 +1,5 @@
 // Constants that aren't important for gameplay.
-export default const Const = {
+const Const = {
     // Camera projection settings
     FOV: 60,
     NEAR: 1,
@@ -32,3 +32,5 @@ export default const Const = {
     TRAIL_HEIGHT: 0.8,
     LIGHT_SOURCE: new THREE.Vector3(5, 10, 5),
 };
+
+export {Const as default};
