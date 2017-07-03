@@ -1,10 +1,12 @@
-function Ground(opt, resources) {
+import config from './config';
+
+export default function Ground(opt, resources) {
     this.object = new THREE.Object3D();
     this.loadObjects(opt, resources);
 }
 
 Ground.prototype.loadObjects = function (opt, resources) {
-    var size = opt.cells * Config.CELL_SIZE;
+    var size = opt.cells * config.CELL_SIZE;
 
     var tex = resources.getTexture(opt.circuitTexture);
     tex.repeat.set(4, 4);

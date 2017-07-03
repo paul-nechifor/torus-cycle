@@ -1,4 +1,7 @@
-function PlayerTrail(computer) {
+import config from './config';
+import Const from './Const';
+
+export default function PlayerTrail(computer) {
     this.computer = computer;
     this.newTrails = [];
     this.startedX = 0;
@@ -13,7 +16,7 @@ PlayerTrail.prototype.startAt = function (xCell, yCell) {
     this.startedY = yCell;
 
     var x, z, mesh;
-    var cs = Config.CELL_SIZE;
+    var cs = config.CELL_SIZE;
     var csh = cs / 2;
     var th = Const.TRAIL_HEIGHT / 2;
     var size = this.computer.size;
@@ -35,7 +38,7 @@ PlayerTrail.prototype.startAt = function (xCell, yCell) {
 PlayerTrail.prototype.modify = function (xCell, yCell, direction) {
     var trail, diff, pos, i;
     var size = this.computer.size;
-    var cs = Config.CELL_SIZE;
+    var cs = config.CELL_SIZE;
 
     if (direction === Const.LEFT || direction === Const.RIGHT) {
         diff = Math.abs(xCell - this.startedX) + 1;

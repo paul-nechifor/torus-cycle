@@ -1,4 +1,7 @@
-function CameraController(camera) {
+import GoalPost from './GoalPost';
+import Const from './Const';
+
+export default function CameraController(camera) {
     this.camera = camera;
 
     this.offsetIndex = 0;

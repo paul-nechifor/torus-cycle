@@ -1,4 +1,7 @@
-function Player(computer, id, xCell, yCell, direction) {
+import LightCycle from './LightCycle';
+import PlayerTrail from './PlayerTrail';
+
+export default function Player(computer, id, xCell, yCell, direction) {
     this.computer = computer;
     this.id = id;
     this.lightCycle = new LightCycle(computer, xCell, yCell, direction);

@@ -1,11 +1,15 @@
+import config from './config';
+import Ground from './Ground';
+
 /**
  * A computer is a game world.
  */
-function Computer(opt, resources, scene) {
+
+export default function Computer(opt, resources, scene) {
     this.opt = opt;
     this.resources = resources;
     this.scene = scene;
-    this.size = opt.cells * Config.CELL_SIZE;
+    this.size = opt.cells * config.CELL_SIZE;
     this.grounds = [];
     this.players = {};
     this.setUp();

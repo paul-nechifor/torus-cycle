@@ -1,4 +1,8 @@
-function LightCycle(computer, xCell, yCell, direction) {
+import config from './config';
+import {changesSign} from './utils';
+import Const from './Const';
+
+export default function LightCycle(computer, xCell, yCell, direction) {
     this.computer = computer;
     this.direction = direction;
     this.leftToTurn = 0.0;
@@ -11,8 +15,8 @@ function LightCycle(computer, xCell, yCell, direction) {
 
 LightCycle.prototype.setUpModels = function (xCell, yCell) {
     var model;
-    var x = xCell * Config.CELL_SIZE + Config.CELL_SIZE/2;
-    var z = yCell * Config.CELL_SIZE + Config.CELL_SIZE/2;
+    var x = xCell * config.CELL_SIZE + config.CELL_SIZE/2;
+    var z = yCell * config.CELL_SIZE + config.CELL_SIZE/2;
 
     for (var i = 0; i < 9; i++) {
         model = LightCycle.loadNewModel(this.computer);
@@ -31,7 +35,7 @@ LightCycle.prototype.remove = function () {
 };
 
 LightCycle.prototype.moveToClosestCell = function () {
-    var cellSize = Config.CELL_SIZE;
+    var cellSize = config.CELL_SIZE;
     var pos = this.models[0].position;
     this.xCell = Math.floor(pos.x / cellSize);
     this.yCell = Math.floor(pos.z / cellSize);
@@ -57,7 +61,7 @@ LightCycle.prototype.tic = function (delta) {
     var increment, pos, roty, x, z, i;
     var size = this.computer.size;
 
-    increment = Config.MOVE_SPEED * delta;
+    increment = config.MOVE_SPEED * delta;
     pos = this.models[0].position;
     x = pos.x;
     z = pos.z;
@@ -81,7 +85,7 @@ LightCycle.prototype.tic = function (delta) {
     }
 
     // Checking if this is a new cell.
-    var cellSize = Config.CELL_SIZE;
+    var cellSize = config.CELL_SIZE;
     var xCell = Math.floor(x / cellSize);
     var yCell = Math.floor(z / cellSize);
     if (xCell !== this.xCell || yCell !== this.yCell) {

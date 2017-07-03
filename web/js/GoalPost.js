@@ -1,4 +1,4 @@
-function GoalPost(initial) {
+export default function GoalPost(initial) {
     this.value = initial;
     this.valueBecome = initial;
     this.changing = false;

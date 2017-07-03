@@ -1,4 +1,4 @@
-function Resources() {
+export default function Resources() {
     this.textures = {};
     this.models = {};
 }
