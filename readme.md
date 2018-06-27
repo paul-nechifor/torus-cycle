@@ -1,3 +1,7 @@
+# This repository has been moved to [gitlab.com/paul-nechifor/torus-cycle](http://gitlab.com/paul-nechifor/torus-cycle).
+
+Old readme:
+
 # TorusCycle
 
 An incomplete Tron WebGL clone. [Preview it.][preview]
